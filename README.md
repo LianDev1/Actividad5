@@ -76,13 +76,16 @@ Se implementó la estructura de un Modal fijo en la pantalla (`position: fixed`,
 ## 📸 Capturas de Pantalla del Flujo Completo
 
 **1. Pantalla de Acceso (Login)**
-<img width="1363" height="683" alt="equ1" src="https://github.com/user-attachments/assets/01fc978e-91e1-4998-9f6b-a31f8c982e72" />
+(img/login.png)
+(img/login-2.png)
 
 **2. Panel de Control (Dashboard Vacío y Menú Lateral)**
-<img width="1365" height="569" alt="equ2" src="https://github.com/user-attachments/assets/8d67116e-5eb7-4f1d-9ef8-245293fe4e8b" />
+(img/primero.png)
 
 **3. Despliegue del Formulario de Captura**
-<img width="1361" height="682" alt="equ3" src="https://github.com/user-attachments/assets/9c084bf1-572a-4471-b79c-a260fe09b8a1" />
+(img/dash.png)
+(img/form.png)
 
 **4. Validación de Edad en el Modal**
-<img width="1366" height="667" alt="equ4" src="https://github.com/user-attachments/assets/25fafc94-1a1c-4944-9028-ef9987a0ba12" />
+(img/modal.png)
+

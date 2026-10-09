@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Administración</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+
+    <div id="wrapper">
+        
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                MiSistema
+            </div>
+            <ul class="nav flex-column mt-2">
+                <li class="nav-item">
+                    <a class="nav-link d-flex justify-content-between align-items-center" onclick="toggleSubmenu()">
+                        Módulo Usuarios <span>▼</span>
+                    </a>
+                    <ul id="submenu" style="display: none;" class="list-unstyled">
+                        <li><a class="nav-link" onclick="mostrarFormulario()">Capturar Alumno</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="btn btn-light border shadow-sm" onclick="toggleSidebar()">
+                    ☰
+                </button>
+                
+                <div class="ms-auto d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle border-0 fw-semibold text-dark" type="button" data-bs-toggle="dropdown" id="nombreUsuarioNavbar">
+                            Cargando...
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                            <li><a class="dropdown-item text-danger" href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid p-4">
+                
+                <div id="formulario" style="display: none;" class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0 text-dark fw-bold">Registro de Datos</h5>
+                            </div>
+                            <div class="card-body p-4">
+                                
+                                <div class="row g-3">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Nombre Completo</label>
+                                        <input type="text" id="nombre" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Correo Electrónico</label>
+                                        <input type="email" id="correo" class="form-control">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label">Contraseña</label>
+                                        <input type="password" id="password" class="form-control" placeholder="Mín. 8 caracteres (Mayúsculas, números, símbolos)">
+                                    </div>
+                           
+            
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Número de Control</label>
+                                        <input type="text" id="control" class="form-control" maxlength="9">
+                                    </div>
+                                     
+            </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Edad (Años)</label>
+                                        <input type="number" id="edad" class="form-control">
+                                    </div>
+                                </div>
+                                 <div class="col-md-12">
+        <div id="loginError" class="alert alert-danger d-none py-2" role="alert"></div>
+    </div>
+
+                                <hr class="my-4">
+                                <button type="button" class="btn btn-primary px-4" onclick="validarFormulario()">Guardar y Validar</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div class="modal-box">
+            <h5 class="text-muted mb-3">Verificación de Edad</h5>
+            <h3 id="resultadoEdad" class="text-primary fw-bold mb-4"></h3>
+            <button class="btn btn-secondary px-4" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/utileria.js"></script>
+    <script src="js/barra.js"></script>
+    
+    <script>
+        window.validarCorreo = Correo;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const usuarioActual = localStorage.getItem("usuarioLogueado");
+            if (!usuarioActual) {
+                window.location.href = "login.html";
+            } else {
+                document.getElementById("nombreUsuarioNavbar").innerText = usuarioActual;
+            }
+        });
+
+        function cerrarSesion() {
+            localStorage.removeItem("usuarioLogueado");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

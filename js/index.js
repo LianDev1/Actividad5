@@ -1,4 +1,4 @@
-// index.js
+
 document.addEventListener("DOMContentLoaded", function() {
 
     // 1. GESTIÓN DE SESIÓN

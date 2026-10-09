@@ -1,5 +1,4 @@
-//FUNCIÓN 1: EN DONDE SE VALIDARA EL CORREO ELECTRONICO
-//USANDO BOOLEAN
+
 function Correo(correo){
     //Creacion de una constante que almacene una expresión usando el metodo .test()
     //El cual responde con un booleano, si el texto tiene el formato correcto enotonces 
@@ -48,7 +47,7 @@ function esMayorDeEdad(fechaNacimiento) {
 // TENDRA LETRAS (MAYUSCULAS y minusculas), NUMEROS, CARACTER ESPECIAL
 
 function validarPassword(password) {
-     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_\-+=])[A-Za-z\d@$!%*?&.#_\-+=]{8,}$/;
+     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_\-+=])[A-Za-z\d@$!%*?&.#_\-+=]{7,}$/;
     return regex.test(password);
 }
 

@@ -37,8 +37,8 @@ function validarFormulario() {
         mostrarAlerta("Password inválido");
         return;
     }
-    if (!/^\d{9}$/.test(control)) {
-        mostrarAlerta("Número de control debe tener 9 dígitos");
+    if (!/^\d{8}$/.test(control)) {
+        mostrarAlerta("Número de control debe tener 8 dígitos");
         return;
     }
 

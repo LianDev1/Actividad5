@@ -1,0 +1,126 @@
+  /* 1. Fondo general y tipografía */
+        body { 
+            background-color: #f0f2f5; 
+            overflow-x: hidden; 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        #wrapper { display: flex; min-height: 100vh; }
+        
+        /* 2. Sidebar  (Degradado oscuro) */
+        #sidebar {
+            min-width: 260px;
+            max-width: 260px;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            transition: margin 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        #sidebar.active { margin-left: -260px; }
+        
+        #sidebar .nav-link { 
+            color: #cbd5e1; 
+            cursor: pointer; 
+            padding: 16px 24px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-left: 4px solid transparent;
+            transition: all 0.2s ease-in-out;
+        }
+        #sidebar .nav-link:hover { 
+            background: rgba(255,255,255,0.05); 
+            color: #ffffff;
+            border-left: 4px solid #3b82f6; /* Acento azul moderno */
+        }
+
+        /* 3. Submenú */
+        #submenu { background: rgba(0,0,0,0.15); }
+        #submenu .nav-link { padding-left: 45px; font-size: 0.9rem; border-left: none; }
+        #submenu .nav-link:hover { color: #3b82f6; background: transparent; }
+        
+        /* 4. Navbar superior */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(8px);
+        }
+        .btn-outline-dark {
+            border-color: #e2e8f0;
+            color: #475569;
+            border-radius: 8px;
+        }
+        .btn-outline-dark:hover {
+            background-color: #f8fafc;
+            color: #0f172a;
+            border-color: #cbd5e1;
+        }
+
+        /* 5. Tarjeta del Formulario */
+        .card { 
+            border: none; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+            background: #ffffff; 
+        }
+        .card-header { 
+            background: #ffffff; 
+            border-bottom: 1px solid #f1f5f9; 
+            padding: 24px; 
+            border-radius: 16px 16px 0 0 !important; 
+        }
+        
+        /* 6. Inputs y Botones del formulario */
+        .form-label { color: #475569; font-weight: 600; font-size: 0.9rem; }
+        .form-control { 
+            border-radius: 8px; 
+            border: 1px solid #cbd5e1; 
+            padding: 12px 16px; 
+            background: #f8fafc; 
+            transition: all 0.3s; 
+        }
+        .form-control:focus { 
+            background: #ffffff; 
+            border-color: #3b82f6; 
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); 
+        }
+        .btn-success { 
+            background: #3b82f6; /* Se mantiene la clase success pero con color azul tech */
+            border: none; 
+            border-radius: 8px; 
+            padding: 12px; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+            transition: all 0.3s; 
+        }
+        .btn-success:hover { 
+            background: #2563eb; 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2); 
+        }
+
+        /* 7. Modal rediseñado con animaciones */
+        #modal {
+            display: none; 
+            position: fixed; z-index: 1050; left: 0; top: 0; width: 100%; height: 100%; 
+            background-color: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        .modal-box {
+            background: #ffffff; 
+            margin: 10% auto; 
+            padding: 40px; 
+            width: 90%; 
+            max-width: 420px; 
+            border-radius: 20px; 
+            text-align: center; 
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            animation: modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-box h4 { color: #64748b; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; }
+        #resultadoEdad { color: #0f172a; font-size: 1.75rem !important; }
+        .modal-box .btn-secondary { background: #cbd5e1; border: none; color: #334155; border-radius: 8px; font-weight: 600; transition: 0.3s; }
+        .modal-box .btn-secondary:hover { background: #94a3b8; color: #ffffff; }
